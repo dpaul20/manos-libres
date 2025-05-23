@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# manos-libres
 
-## Getting Started
+Traductor open-source de texto a Lengua de Señas Venezolana (LSV) usando avatar 3D.
 
-First, run the development server:
+## Características
 
-```bash
+- Next.js (App Router) + TypeScript
+- Diccionario básico de señas (lsv-dictionary.json)
+- Animaciones 3D (formato .glb) para cada seña
+- Input de texto: el avatar reproduce las señas en orden
+- Despliegue gratuito en GitHub Pages
+
+## Instalación local
+
+```powershell
+# Instala dependencias
+npm install
+
+# Corre en modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Exportar y desplegar en GitHub Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+# Exporta el sitio estático
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Despliega a GitHub Pages (requiere gh-pages)
+npm run deploy
+```
 
-## Learn More
+## Estructura del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+- `/app` — Rutas y componentes principales (App Router)
+- `/components` — Componentes reutilizables (ej. AvatarViewer)
+- `/data/lsv-dictionary.json` — Diccionario texto → seña
+- `/animations` — Archivos .glb de animaciones
+- `/public` — Archivos públicos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licencia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Código: MIT
+- Animaciones/datos: CC BY-SA 4.0
 
-## Deploy on Vercel
+## Cómo contribuir
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Lee `CONTRIBUTING.md` y abre un issue o pull request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Proyecto impulsado por la comunidad para la accesibilidad y la inclusión.
