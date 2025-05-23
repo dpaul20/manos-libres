@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import AvatarViewer from "../components/AvatarViewer";
-import lsvDictionary from "../../data/lsv-dictionary.json";
+import lsvDictionaryJson from "../../data/lsv-dictionary.json";
+
+// For type safety, define the dictionary as a Record<string, string>
+const lsvDictionary: Record<string, string> = lsvDictionaryJson;
 
 export default function TextTranslator() {
   const [input, setInput] = useState("");
