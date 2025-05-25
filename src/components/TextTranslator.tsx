@@ -54,6 +54,7 @@ export default function TextTranslator() {
   }, [autoPlay, current, sequence.length]);
 
   const hasSequence = sequence.length > 0;
+  const normalizedInput = normalizeText(input);
   const currentWord = hasSequence ? normalizedInput.split(/\s+/)[current] : "";
 
   return (
