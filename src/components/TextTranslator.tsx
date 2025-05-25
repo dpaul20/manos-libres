@@ -54,7 +54,7 @@ export default function TextTranslator() {
   }, [autoPlay, current, sequence.length]);
 
   const hasSequence = sequence.length > 0;
-  const currentWord = hasSequence ? input.split(/\s+/)[current] : "";
+  const currentWord = hasSequence ? normalizedInput.split(/\s+/)[current] : "";
 
   return (
     <div className="w-full max-w-xl mx-auto flex flex-col gap-6 bg-card p-6 rounded-lg border border-card shadow-md">
