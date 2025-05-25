@@ -1,14 +1,29 @@
 "use client";
 import React from "react";
+import { Card, CardContent } from "../components/ui/card";
 
-export default function AvatarViewer({ animation }: { animation: string }) {
-  // Aquí se integrará Three.js para mostrar el avatar y reproducir la animación .glb
-  // Por ahora, solo muestra el nombre de la animación como placeholder
+interface AvatarViewerProps {
+  animation: string;
+}
+
+export default function AvatarViewer({
+  animation,
+}: Readonly<AvatarViewerProps>) {
+  // Si no hay animación, no renderizamos nada
+  if (!animation) {
+    return null;
+  }
   return (
-    <div className="w-full flex flex-col items-center justify-center p-4 border rounded bg-gray-50 dark:bg-gray-800">
-      <div className="text-lg font-semibold mb-2">Animación actual:</div>
-      <div className="text-blue-600 dark:text-blue-300">{animation}</div>
-      <div className="mt-4 text-gray-400">[Aquí se mostrará el avatar 3D]</div>
-    </div>
+    <Card className="w-full flex flex-col items-center justify-center">
+      <CardContent className="w-full flex flex-col items-center justify-center p-4">
+        <div className="text-lg font-semibold mb-2 text-card-foreground">
+          Animación actual:
+        </div>
+        <div className="text-primary">{animation}</div>
+        <div className="mt-4 text-muted-foreground">
+          [Aquí se mostrará el avatar 3D]
+        </div>
+      </CardContent>
+    </Card>
   );
 }
